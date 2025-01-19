@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.example.Player" id="player1">
+        <property name="name" value="Sachin"></property>
+        <property name="ranking" value="1"></property>
+    </bean>
+
+<!--    Constructor Injection-->
+    <bean class="org.example.Developer" id="dev1">
+        <constructor-arg value="Java Spring Developer"/>
+        <constructor-arg value="976"/>
+    </bean>
+
+    <bean class="org.example.Developer" id="dev2">
+        <constructor-arg value="873" index="1" />
+        <constructor-arg value="MERN Stack Developer" index="0"/>
+    </bean>
+
+    <bean class="org.example.Developer" id="dev3">
+<!--        order of element is same as defined in constructor-->
+        <constructor-arg  name="leetCodeScore" value="MEAN Stack Developer" />
+        <constructor-arg  name="techStack" value="749" />
+    </bean>
+
+<!--    Injection for object reference -->
+    <bean class="org.example.Person" id ="personObject">
+        <constructor-arg name="dev"   ref="dev1"/>
+        <constructor-arg name="player" ref="player1"/>
+    </bean>
+</beans>
