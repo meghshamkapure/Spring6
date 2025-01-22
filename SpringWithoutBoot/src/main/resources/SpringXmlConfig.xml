@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+        <bean class="org.example.Computer"/>
+        <!--    <bean class="org.example.Computer"/>-->
+        <!--    Exception in thread "main" org.springframework.beans.factory.NoUniqueBeanDefinitionException: No qualifying bean of type 'org.example.Computer' available: expected single matching bean but found 2: org.example.Computer#0,org.example.Computer#1-->
+
+
+        <bean class="org.example.Person" id="personObject1"/>
+        <bean class="org.example.Person" id="personObject2"/>
+
+</beans>
